@@ -6,19 +6,31 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-/* Страница Хоруса Луперкаля */
-router.get('/primarchs/horus', function(req, res, next) {
-  res.send("<h1>Хорус Луперкаль — Воитель</h1>")
+/* Страница Святой Терры */
+router.get('/terra/terra', function(req, res, next) {
+  res.render('terra', {
+    title: "Святая Терра",
+    picture: "/images/terra.png",
+    desc: "Тронный мир Человечества, колыбель Империума..."
+  });
 });
 
-/* Страница Робаута Жиллимана */
-router.get('/primarchs/guilliman', function(req, res, next) {
-  res.send("<h1>Робаут Жиллиман — Аватар Империума</h1>")
+/* Страница Адептус Кустодес */
+router.get('/terra/custodes', function(req, res, next) {
+  res.render('terra', {
+    title: "Адептус Кустодес",
+    picture: "/images/custodes.png",
+    desc: "Легион Кустодес — личные телохранители Императора..."
+  });
 });
 
-/* Страница Лемана Русса */
-router.get('/primarchs/russ', function(req, res, next) {
-  res.send("<h1>Леман Русс — Коготь Императора</h1>")
+/* Страница Адептум Администратум */
+router.get('/terra/administratum', function(req, res, next) {
+  res.render('terra', {
+    title: "Адептум Администратум",
+    picture: "/images/administratum.png",
+    desc: "Бюрократическое сердце Империума..."
+  });
 });
 
 module.exports = router;
