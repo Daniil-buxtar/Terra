@@ -1,13 +1,11 @@
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://127.0.0.1:27017/testTerra2024');
 
-var schema = mongoose.Schema({ name: String });
+var Structure = require('./models/structure.js').Structure;
 
-schema.methods.say = function() {
-  console.log(this.name + " говорит: Слава Императору!");
-};
+var structure = new Structure({
+  title: "Святая Терра",
+  nick: "terra"
+});
 
-const Unit = mongoose.model('Unit', schema);
-
-const unit = new Unit({ name: 'Кустодес' });
-unit.save().then(() => unit.say());
+structure.save();
