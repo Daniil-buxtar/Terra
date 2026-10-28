@@ -16,15 +16,13 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" href="/terra/terra">Святая Терра</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/terra/custodes">Адептус Кустодес</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/terra/administratum">Адептум Администратум</a>
-            </li>
+            <% if(typeof nav == 'object' && nav){ %>
+              <% nav.forEach(function(item){ %>
+                <li class="nav-item">
+                  <a class="nav-link" href="/terra/<%= item.nick %>"><%= item.title %></a>
+                </li>
+              <% }) %>
+            <% } %>
           </ul>
         </div>
       </div>
