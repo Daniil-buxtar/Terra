@@ -1,0 +1,24 @@
+<% layout('layout/page.ejs') %>
+
+<div class="login-page">
+  <div class="login-box">
+    <h1>Архив Терры</h1>
+    <p class="subtitle">Доступ к священным архивам Империума</p>
+
+    <form action="/logreg" method="post">
+      <label>Имя пользователя</label>
+      <input type="text" name="username" placeholder="Введите имя" />
+
+      <label>Пароль</label>
+      <input type="password" name="password" placeholder="Введите пароль" />
+
+      <input type="submit" value="Войти" />
+
+      <% if(error) { %>
+        <div class="alert"><%= error %></div>
+      <% } %>
+
+      <p class="hint">Если такого пользователя нет — он будет создан автоматически</p>
+    </form>
+  </div>
+</div>
