@@ -23,8 +23,17 @@
                 </li>
               <% }) %>
             <% } %>
-             <li class="nav-item"></li>
-              <a class="nav-link" href="/logreg">Войти</a>
+            <% if(user) { %>
+              <li class="nav-item">
+                <form action="/logout" method="post" style="display:inline;">
+                  <button type="submit" class="nav-link btn btn-link" style="border:none; background:none;">Выйти</button>
+                </form>
+              </li>
+            <% } else { %>
+              <li class="nav-item">
+                <a class="nav-link" href="/logreg">Войти</a>
+              </li>
+            <% } %>
           </ul>
         </div>
       </div>
