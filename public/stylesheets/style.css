@@ -451,3 +451,23 @@ button.nav-link {
   color: #0a0a0a;
   text-decoration: none;
 }
+
+/* ============================================
+   ФУТЕР
+   ============================================ */
+
+.site-footer {
+  background-color: #0a0a0a;
+  border-top: 1px solid #4a3a1a;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.site-footer p {
+  color: #666;
+  font-family: 'Cinzel', serif;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0;
+}
