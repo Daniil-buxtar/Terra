@@ -1,11 +1,37 @@
 <% layout('layout/page.ejs') %>
 
-<% if(user) { %>
-  <h1>Привет, <%= user.username %></h1>
-<% } else { %>
-  <h1>Привет, незалогиненный пользователь</h1>
-<% } %>
+<!-- HERO-СЕКЦИЯ -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Святая Терра</h1>
+    <p class="hero-subtitle">Только верные слуги Императора узрят эти тайны</p>
+    <% if(!user) { %>
+      <a href="/logreg" class="btn-hero">Войти в архив</a>
+    <% } else { %>
+      <p class="hero-welcome">Привет, <%= user.username %></p>
+    <% } %>
+  </div>
+</section>
 
-<h1><%= title %></h1>
-<p>Welcome to <%= title %></p>
-<p>Счётчик посещений: <%= counter %></p>
+<!-- КАРТОЧКИ СТРУКТУР -->
+<section class="cards-section">
+  <div class="container">
+    <h2 class="section-title">Структуры Империума</h2>
+    <div class="row">
+      <% nav.forEach(function(item){ %>
+        <div class="col-md-4">
+          <a href="/terra/<%= item.nick %>" class="card-link">
+            <div class="card structure-card">
+              <img src="/images/<%= item.nick %>.png" class="card-img-top" alt="<%= item.title %>">
+              <div class="card-body">
+                <h5 class="card-title"><%= item.title %></h5>
+                <p class="card-text">Нажмите, чтобы открыть архив</p>
+                <span class="btn-card">Открыть архив</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</section>

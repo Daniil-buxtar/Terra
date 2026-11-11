@@ -1,6 +1,19 @@
 <% layout('layout/page.ejs') %>
 
-<h1><%= title %></h1>
-<img src="<%= picture %>" alt="<%= title %>" style="max-width: 400px;" />
-<h4>Сведения из Архива Терры:</h4>
-<p><%= desc %></p>
+<!-- HERO-СЕКЦИЯ СТРУКТУРЫ -->
+<section class="structure-hero" style="background-image: url('<%= picture %>');">
+  <div class="structure-hero-content">
+    <h1><%= title %></h1>
+  </div>
+</section>
+
+<!-- ОПИСАНИЕ -->
+<section class="structure-content">
+  <div class="container">
+    <div class="structure-box">
+      <h3>Сведения из Архива Терры</h3>
+      <p><%= desc %></p>
+      <a href="/" class="btn-back">← Назад к архиву</a>
+    </div>
+  </div>
+</section>
